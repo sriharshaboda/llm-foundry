@@ -1,6 +1,6 @@
 integrations:
 - integration_type: git_repo
-  git_repo: ruichenmle/ava-llm-foundry
+  git_repo: sriharshaboda/llm-foundry
   git_branch: sut-mpt7b-8k-finetune # use your branch
   pip_install: -e .[gpu]
   ssh_clone: true # Should be true if using a private repo
@@ -11,7 +11,7 @@ integrations:
 # to convert and host the full 'train' dataset.
 
 command: |
-  cd ava-llm-foundry/scripts/
+  cd llm-foundry/scripts/
   python inference/convert_composer_to_hf.py \
     --composer_path s3://mosaicml-68c98fa5-0b21-4c7b-b40b-c4482db8832a/avalaraGPT/model/mpt-7b-8k/raw-sut-finetuned/mono/ep10-ba80.pt \
     --hf_output_path s3://mosaicml-68c98fa5-0b21-4c7b-b40b-c4482db8832a/avalaraGPT/model/mpt-7b-8k/raw-sut-finetuned-hf/ \
